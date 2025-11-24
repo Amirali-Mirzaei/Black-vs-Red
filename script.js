@@ -3,10 +3,8 @@ const log = document.getElementById("log");
 const startBtn = document.getElementById("startBtn");
 let selectedTeam = null;
 
-// سلامتی اولیه بازیکن‌ها (Red و Black)
 let health = { H: 3, D: 3, S: 3, C: 3 };
 
-// انتخاب تیم
 balls.forEach(ball => {
   ball.addEventListener("click", () => {
     balls.forEach(b => b.classList.remove("selected"));
@@ -22,15 +20,14 @@ balls.forEach(ball => {
   });
 });
 
-// شروع بازی
 startBtn.addEventListener("click", () => {
   if (!selectedTeam) return;
-  health = { H: 3, D: 3, S: 3, C: 3 }; // ریست سلامتی
+  health = { H: 3, D: 3, S: 3, C: 3 }; 
   const opponentTeam = selectedTeam === "red" ? "black" : "red";
   log.innerHTML += `<p>Battle begins: Team ${selectedTeam.toUpperCase()} vs Team ${opponentTeam.toUpperCase()}!</p>`;
   fight(selectedTeam, opponentTeam);
 });
-// شبیه‌سازی مبارزه
+
 function fight(teamA, teamB) {
   const fightersA = Array.from(document.querySelectorAll(`[data-team="${teamA}"]`));
   const fightersB = Array.from(document.querySelectorAll(`[data-team="${teamB}"]`));
@@ -46,11 +43,9 @@ function fight(teamA, teamB) {
       return;
     }
 
-    // انتخاب تصادفی مبارز از هر تیم
     const fighterA = aliveA[Math.floor(Math.random() * aliveA.length)];
     const fighterB = aliveB[Math.floor(Math.random() * aliveB.length)];
 
-    // انتخاب تصادفی مهاجم
     const attacker = Math.random() < 0.5 ? fighterA : fighterB;
     const defender = attacker === fighterA ? fighterB : fighterA;
 
@@ -66,7 +61,6 @@ function fight(teamA, teamB) {
   }, 2000);
 }
 
-// انیمیشن حمله
 function animateAttack(attacker, defender, callback) {
   const attackerRect = attacker.getBoundingClientRect();
   const defenderRect = defender.getBoundingClientRect();
