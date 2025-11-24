@@ -1,0 +1,160 @@
+:root {
+--red: red; 
+--black: black;
+}  
+body {
+background: #d9c6b2;
+padding: 0;
+margin: 0;  
+} 
+* {
+box-sizing: border-box;  
+font-family: "Audiowide";  
+}
+header {
+background: linear-gradient(to left, var(--red), var(--black));
+padding: 15px 30px;
+display: flex;
+position: relative;
+align-items: center;
+justify-content: space-between;
+}
+div#one {
+color: white;
+font-weight: bold;
+font-size: 24px;
+margin: 0 0 0 4%;
+padding: 0;
+}
+ul {
+list-style: none;
+display: flex;
+margin: 0 4% 0 0;
+padding: 0;
+gap: 20px;  
+}
+li a {
+color: white;
+text-decoration: none;
+font-weight: 600;  
+transition: color .4s;  
+}
+li a:hover {
+color: black; 
+}
+div#two {
+display: inline-flex;
+font-size: 35px;
+font-weight: 600;
+text-align: center;
+padding: 0;
+margin: 8% 0 0 42%;
+transition: all .3s;
+}
+div#two:hover {
+color: #800000;
+transform: translateY(-5px); 
+}
+footer {
+background: linear-gradient(to left, var(--red), var(--black));
+display: flex;
+font-size: 24px;
+padding: 35px 30px;
+margin: 5% 0 0 0;
+align-items: center;
+justify-content: center;
+}
+.arena {
+display: flex;
+justify-content: space-around;
+margin: 30px 0;
+}
+.team {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+.ball {
+width: 60px;
+height: 60px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-weight: bold;
+position: relative;
+transition: transform 0.5s ease;
+cursor: grab;
+}
+.ball:hover {
+transform: translateY(-5px);  
+}
+.red { background: var(--red); }
+.black { background: var(--black); }
+.selected { border: 4px solid #800000; }
+#log {
+margin-top: 20px;
+background: #f6f7eb;
+padding: 15px;
+border-radius: 10px;
+max-width: 500px;
+margin-left: auto;
+margin-right: auto;
+text-align: left;
+height: 250px;
+overflow-y: auto;
+transition: box-shadow .3s;
+}
+#log:hover {
+box-shadow: 0 4px 8px 0 black;  
+}
+button {
+padding: 0;
+margin: 3% 0 0 47%;  
+font-size: 18px;
+transition: transform .3s;
+}
+button:hover {
+transform: translateY(-5px);  
+cursor: pointer;
+}
+@media screen and (max-width: 650px) {
+  div#two {
+      font-size: 20px;
+  }
+} 
+i#l {
+padding: 0;
+font-size: 30px;
+transition: all .3s;
+color: white;  
+}
+i#l:hover {
+transform: translateY(-5px);  
+color: #0072b1;  
+}
+i#g {
+padding: 0;
+font-size: 30px;
+transition: all .3s;
+color: white;   
+}
+i#g:hover {
+transform: translateY(-5px);  
+color: #c6cdd5;  
+}
+i#y {
+padding: 0;
+font-size: 30px;
+transition: all .3s;
+color: white;  
+} 
+i#y:hover {
+transform: translateY(-5px);  
+color: red;  
+}
+p#e {
+color: white;
+font-size: 23px;
+}
