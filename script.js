@@ -45,7 +45,6 @@ function fight(teamA, teamB) {
 
     const fighterA = aliveA[Math.floor(Math.random() * aliveA.length)];
     const fighterB = aliveB[Math.floor(Math.random() * aliveB.length)];
-
     const attacker = Math.random() < 0.5 ? fighterA : fighterB;
     const defender = attacker === fighterA ? fighterB : fighterA;
 
