@@ -39,7 +39,7 @@ function fight(teamA, teamB) {
     if (aliveA.length === 0 || aliveB.length === 0) {
       clearInterval(fightInterval);
       const winner = aliveA.length > 0 ? teamA : teamB;
-      log.innerHTML += `<p>🏆 Winner: Team ${winner.toUpperCase()}!</p>`;
+      log.innerHTML += `<p>&#127942 Winner: Team ${winner.toUpperCase()}!</p>`;
       return;
     }
 
@@ -52,7 +52,7 @@ function fight(teamA, teamB) {
     animateAttack(attacker, defender, () => {
       health[defender.id]--;
       if (health[defender.id] <= 0) {
-        log.innerHTML += `<p>💥 ${attacker.id} knocked out ${defender.id}!</p>`;
+        log.innerHTML += `<p>&#128165 ${attacker.id} knocked out ${defender.id}!</p>`;
       } else {
         log.innerHTML += `<p>${attacker.id} hits ${defender.id}! (${defender.id} has ${health[defender.id]} HP left)</p>`;
       }
